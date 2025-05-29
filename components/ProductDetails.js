@@ -69,7 +69,10 @@ export default function ProductDetails({ product }) {
           </button>
 
           <p className="text-sm text-gray-500 mt-4">
-            Last updated: {new Date(product.lastUpdated).toLocaleString()}
+            Last updated:{" "}
+            {new Date(product.lastUpdated).toLocaleString("en-GB", {
+              hour12: true,
+            })}
           </p>
         </div>
       </div>
