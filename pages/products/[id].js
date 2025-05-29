@@ -79,7 +79,9 @@ export async function getServerSideProps(context) {
       product,
       similarProducts, // This gets the static data
       renderInfo: {
-        timestamp: new Date().toISOString(),
+        timestamp: new Date(product.lastUpdated).toLocaleString("en-GB", {
+          hour12: true,
+        }),
         method: "Server-Side Rendering (SSR)",
       },
     },
